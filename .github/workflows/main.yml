@@ -50,7 +50,7 @@ jobs:
         run: npm ci
 
       - name: Set up NPM
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/
       
       - name: Publish to GitHub Packages
         run: npm publish
@@ -59,4 +59,4 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.TOKEN_NPM }}
-   
+          NPM_TOKEN: ${{ secrets.TOKEN_NPM }}
