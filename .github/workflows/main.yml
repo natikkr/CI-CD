@@ -50,7 +50,7 @@ jobs:
         run: npm ci
 
       - name: Set up NPM
-        run: echo "//registry.npmjs.org/:_authToken=${{ TOKEN_NPM }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrc
       
       - name: Publish to GitHub Packages
         run: npm publish
